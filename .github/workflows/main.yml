@@ -27,11 +27,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest
 
-      - name: Lint with flake8 without docker-compose
-        run: |
-          flake8 app --count --select=E9,F63,F7,F82,W391 --show-source --statistics
-          flake8 app --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
       - name: Run pytests
         run: pytest tests
 
